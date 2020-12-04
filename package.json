@@ -1,0 +1,82 @@
+{
+  "name": "vue-map-3d",
+  "version": "1.0.2",
+  "description": "基于three.js和vue的3d地图组件",
+  "author": "jkchen2",
+  "private": false,
+  "main": "dist/index.umd.min.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lib": "vue-cli-service build --target lib --name index --dist lib packages/index.js",
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-polyfill": "^6.26.0",
+    "moment": "^2.19.2",
+    "query-string": "^5.0.1",
+    "three": "^0.123.0",
+    "throttle-debounce": "^2.0.0",
+    "url-join": "^2.0.2",
+    "url-search-params-polyfill": "^6.0.0",
+    "vue": "^2.5.2",
+    "vue-axios": "^2.0.2",
+    "vue-click-outside": "^1.0.7",
+    "vue-router": "^3.0.1",
+    "vuebar": "0.0.18",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-plugin-unit-jest": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-imports": "^1.5.1",
+    "compression-webpack-plugin": "^1.1.11",
+    "eslint": "^4.15.0",
+    "eslint-plugin-vue": "^4.0.0",
+    "expose-loader": "^0.7.5",
+    "ghooks": "^2.0.4",
+    "husky": "^1.0.0-rc.15",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-url": "^7.2.1",
+    "sass-loader": "^7.1.0",
+    "url-loader": "^0.5.8",
+    "validate-commit-msg": "^2.14.0",
+    "vue-loader": "^15.7.0",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  },
+  "keywords": [
+    "vue2",
+    "three",
+    "three.js",
+    "THREE",
+    "vue-scroll",
+    "map",
+    "3d",
+    "3d-map",
+    "map-3d"
+  ]
+}

@@ -1,0 +1,1318 @@
+<html>
+
+<head>
+    <meta meta charset="UTF-8" />
+    <style type="text/css">
+      .common-center{
+        margin:0pt;
+        text-align:center;
+      }
+      .cell-border {
+        border:0.75pt solid #000;
+      }
+      .font{
+        font-family:宋体;
+      }
+      .title-font {
+        font-size:14pt;
+        font-weight:bold
+      }
+      .label-font {
+        font-size:9pt;
+      }
+      .label-center-p {
+        line-height:10.5pt;
+        text-align:center;
+      }
+      .td-cell-middle {
+        padding:0.48pt 2.48pt;
+        vertical-align:middle;
+      }
+      .td-cell-p {
+        line-height:9pt;
+        margin:0pt;
+        text-align:center;
+      }
+      .symptom {
+        line-height:10pt;
+        margin:0;
+        text-align:justify;
+        /* text-indent:10pt; */
+      }
+    </style>
+</head>
+
+<body>
+    <div class="font">
+        <p class="common-center" style="line-height:25pt; font-size: 18pt;">
+            <span class="title-font">高血压患者随访表</span>
+        </p>
+        <p style="line-height:25pt; margin:0 10%; text-align:justify;">
+            <span class="title-font">姓名：</span>
+            {{if name}}
+            <span class="title-font" style="text-decoration:underline">{{ name }}</span>
+            {{/if}}
+        </p>
+        <table style="border-collapse:collapse; margin:0 8%; width:84%">
+            <tr style="height:17pt">
+                <td class="cell-border td-cell-middle" colspan="3">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">随访日期</span>
+                    </p>
+                </td>
+                <td class="cell-border td-cell-middle" colspan="2">
+                    <p class="td-cell-p">
+                        <span class="label-font">{{ itemAry[0].followupTime.substring(0,10) }}</span>
+                    </p>
+                </td>
+                <td class="cell-border td-cell-middle" colspan="2">
+                    <p class="td-cell-p">
+                      <span class="label-font">{{ itemAry[1].followupTime.substring(0,10) }}</span>
+                    </p>
+                </td>
+                <td class="cell-border td-cell-middle" colspan="2">
+                    <p class="td-cell-p">
+                        <span class="label-font">{{ itemAry[2].followupTime.substring(0,10) }}</span>
+                    </p>
+                </td>
+                <td class="cell-border td-cell-middle" colspan="3">
+                    <p class="td-cell-p">
+                      <span class="label-font">{{ itemAry[3].followupTime.substring(0,10) }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td class="cell-border td-cell-middle" colspan="3">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">随访方式</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="td-cell-p label-font">
+                      {{if itemAry[0].mode == 1 }}
+                      <span>门诊</span>
+                      {{/if}}
+                      {{if itemAry[0].mode == 2 }}
+                      <span>家庭</span>
+                      {{/if}}
+                      {{if itemAry[0].mode == 3 }}
+                      <span>电话</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="td-cell-p label-font">
+                      {{if itemAry[1].mode == 1 }}
+                      <span>门诊</span>
+                      {{/if}}
+                      {{if itemAry[1].mode == 2 }}
+                      <span>家庭</span>
+                      {{/if}}
+                      {{if itemAry[1].mode == 3 }}
+                      <span>电话</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="td-cell-p label-font">
+                      {{if itemAry[2].mode == 1 }}
+                      <span>门诊</span>
+                      {{/if}}
+                      {{if itemAry[2].mode == 2 }}
+                      <span>家庭</span>
+                      {{/if}}
+                      {{if itemAry[2].mode == 3 }}
+                      <span>电话</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p class="td-cell-p label-font">
+                      {{if itemAry[3].mode == 1 }}
+                      <span>门诊</span>
+                      {{/if}}
+                      {{if itemAry[3].mode == 2 }}
+                      <span>家庭</span>
+                      {{/if}}
+                      {{if itemAry[3].mode == 3 }}
+                      <span>电话</span>
+                      {{/if}}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="cell-border td-cell-middle" style="width:3.8%">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">&#xa0;</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">症</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">&#xa0;</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">状</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">&#xa0;</span>
+                    </p>
+                </td>
+                <td colspan="2" rowspan="2" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p class="symptom">
+                        <span style="font-size:9pt">0.没有症状　</span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">1.头痛头晕 </span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">2.恶心呕吐　</span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">3.眼花耳鸣  </span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">4.呼吸困难　</span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">5.心悸胸闷 </span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">6.鼻衄出血不止</span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">7.四肢发麻  </span>
+                    </p>
+                    <p class="symptom">
+                        <span style="font-size:9pt">8.下肢水肿</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle" style="height:17pt">
+                    <p class="td-cell-p label-font">
+                      <span>{{ itemAry[0].symptom }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle" style="height:17pt">
+                    <p class="td-cell-p label-font">
+                      <span>{{ itemAry[1].symptom }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle" style="height:17pt">
+                    <p class="td-cell-p label-font">
+                      <span>{{ itemAry[2].symptom }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle" style="height:17pt">
+                    <p class="td-cell-p label-font">
+                      <span>{{ itemAry[3].symptom }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:89.7pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:justify; ">
+                        <span style="font-size:9pt">其他：</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:justify; ">
+                        <span style="font-size:9pt">其他：</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:justify; ">
+                        <span style="font-size:9pt">其他：</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:justify; ">
+                        <span style="font-size:9pt">其他：</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td rowspan="5" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:3.8%">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">体</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">&#xa0;</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">征</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">血压mmHg</span>
+                    </p>
+
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        {{if itemAry[0].systolicPressure != '' }}
+                        <span style="font-size:9pt">{{ itemAry[0].systolicPressure }}</span>
+                        {{/if}}
+                        <span style="font-size:9pt">／</span>
+                        {{if itemAry[0].systolicPressure != '' }}
+                        <span style="font-size:9pt">{{ itemAry[0].diastolicPressure }}</span>
+                        {{/if}}
+                        <span style="font-size:9pt">mmHg</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        {{if itemAry[1].systolicPressure != '' }}
+                        <span style="font-size:9pt">{{ itemAry[1].systolicPressure }}</span>
+                        {{/if}}
+                        <span style="font-size:9pt">／</span>
+                        {{if itemAry[1].systolicPressure != '' }}
+                        <span style="font-size:9pt">{{ itemAry[1].diastolicPressure }}</span>
+                        {{/if}}
+                        <span style="font-size:9pt"> mmHg</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[2].systolicPressure != '' }}
+                      <span style="font-size:9pt">{{ itemAry[2].systolicPressure }}</span>
+                      {{/if}}
+                      <span style="font-size:9pt">／</span>
+                      {{if itemAry[2].systolicPressure != '' }}
+                      <span style="font-size:9pt">{{ itemAry[2].diastolicPressure }}</span>
+                      {{/if}}
+                      <span style="font-size:9pt"> mmHg</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[3].systolicPressure != '' }}
+                      <span style="font-size:9pt">{{ itemAry[3].systolicPressure }}</span>
+                      {{/if}}
+                      <span style="font-size:9pt">／</span>
+                      {{if itemAry[3].systolicPressure != '' }}
+                      <span style="font-size:9pt">{{ itemAry[3].diastolicPressure }}</span>
+                      {{/if}}
+                      <span style="font-size:9pt"> mmHg</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">体重Kg</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].weight }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].weight }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].weight }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].weight }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">BMI</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].bmi }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].bmi }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].bmi }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].bmi }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">心率</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].heartRate }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].heartRate }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].heartRate }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].heartRate }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">其    他</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].other }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].other }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].other }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].other }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td rowspan="6" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:3.8%">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">生</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">活</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">方</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">式</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">指</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">导</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">吸    烟</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].smoking }} 支/天</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].smoking }} 支/天</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].smoking }} 支/天</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].smoking }} 支/天</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">饮    酒</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].drink }} 两/天</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].drink }} 两/天</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].drink }} 两/天</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].drink }} 两/天</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">运    动</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; padding-left:0.05pt; text-align:center; text-indent:-0.05pt; ">
+                        <span style="font-size:9pt">{{itemAry[0].exerciseFrequency}}次/周 {{itemAry[0].exerciseTime}}分钟/次</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; padding-left:0.05pt; text-align:center; text-indent:-0.05pt; ">
+                        <span style="font-size:9pt">{{itemAry[1].exerciseFrequency}}次/周 {{itemAry[1].exerciseTime}}分钟/次</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; padding-left:0.05pt; text-align:center; text-indent:-0.05pt; ">
+                        <span style="font-size:9pt">{{itemAry[2].exerciseFrequency}}次/周 {{itemAry[2].exerciseTime}}分钟/次</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; padding-left:0.05pt; text-align:center; text-indent:-0.05pt; ">
+                        <span style="font-size:9pt">{{itemAry[3].exerciseFrequency}}次/周 {{itemAry[3].exerciseTime}}分钟/次</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">摄盐情况</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[0].saltIntake == 1 }}
+                      <span style="font-size:9pt">轻</span>
+                      {{/if}}
+                      {{if itemAry[0].saltIntake == 2 }}
+                      <span style="font-size:9pt">中</span>
+                      {{/if}}
+                      {{if itemAry[0].saltIntake == 3 }}
+                      <span style="font-size:9pt">重</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[1].saltIntake == 1 }}
+                      <span style="font-size:9pt">轻</span>
+                      {{/if}}
+                      {{if itemAry[1].saltIntake == 2 }}
+                      <span style="font-size:9pt">中</span>
+                      {{/if}}
+                      {{if itemAry[1].saltIntake == 3 }}
+                      <span style="font-size:9pt">重</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[2].saltIntake == 1 }}
+                      <span style="font-size:9pt">轻</span>
+                      {{/if}}
+                      {{if itemAry[2].saltIntake == 2 }}
+                      <span style="font-size:9pt">中</span>
+                      {{/if}}
+                      {{if itemAry[2].saltIntake == 3 }}
+                      <span style="font-size:9pt">重</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[3].saltIntake == 1 }}
+                      <span style="font-size:9pt">轻</span>
+                      {{/if}}
+                      {{if itemAry[3].saltIntake == 2 }}
+                      <span style="font-size:9pt">中</span>
+                      {{/if}}
+                      {{if itemAry[3].saltIntake == 3 }}
+                      <span style="font-size:9pt">重</span>
+                      {{/if}}
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">心理调整</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[0].mentalAdjustment == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[0].mentalAdjustment == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[0].mentalAdjustment == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[1].mentalAdjustment == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[1].mentalAdjustment == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[1].mentalAdjustment == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[2].mentalAdjustment == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[2].mentalAdjustment == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[2].mentalAdjustment == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[3].mentalAdjustment == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[3].mentalAdjustment == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[3].mentalAdjustment == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">遵医行为</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[0].complianceBehavior == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[0].complianceBehavior == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[0].complianceBehavior == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[1].complianceBehavior == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[1].complianceBehavior == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[1].complianceBehavior == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[2].complianceBehavior == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[2].complianceBehavior == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[2].complianceBehavior == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[3].complianceBehavior == 1 }}
+                      <span style="font-size:9pt">良好</span>
+                      {{/if}}
+                      {{if itemAry[3].complianceBehavior == 2 }}
+                      <span style="font-size:9pt">一般</span>
+                      {{/if}}
+                      {{if itemAry[3].complianceBehavior == 3 }}
+                      <span style="font-size:9pt">差</span>
+                      {{/if}}
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:26.35pt">
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">实验室检查</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">血糖___（ mmol/Lmg/dl）</span>
+                    </p>
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">其他：</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">血糖___（ mmol/Lmg/dl）</span>
+                    </p>
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">其他：</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">血糖___（ mmol/Lmg/dl）</span>
+                    </p>
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">其他：</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">血糖___（ mmol/Lmg/dl）</span>
+                    </p>
+                    <p style="line-height:8pt; text-align:justify; ">
+                        <span style="font-size:8pt">其他：</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td rowspan="10" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                      <span style="font-size:10.5pt">&#xa0;</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">用</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">药</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">情</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">况</span>
+                    </p>
+                    <p class="label-center-p">
+                      <span style="font-size:10.5pt">&#xa0;</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:10.5pt">服药依从性</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[0].medicationCompliance == 1 }}
+                      <span style="font-size:9pt">规律</span>
+                      {{/if}}
+                      {{if itemAry[0].medicationCompliance == 2 }}
+                      <span style="font-size:9pt">间断</span>
+                      {{/if}}
+                      {{if itemAry[0].medicationCompliance == 3 }}
+                      <span style="font-size:9pt">不服药</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[1].medicationCompliance == 1 }}
+                      <span style="font-size:9pt">规律</span>
+                      {{/if}}
+                      {{if itemAry[1].medicationCompliance == 2 }}
+                      <span style="font-size:9pt">间断</span>
+                      {{/if}}
+                      {{if itemAry[1].medicationCompliance == 3 }}
+                      <span style="font-size:9pt">不服药</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[2].medicationCompliance == 1 }}
+                      <span style="font-size:9pt">规律</span>
+                      {{/if}}
+                      {{if itemAry[2].medicationCompliance == 2 }}
+                      <span style="font-size:9pt">间断</span>
+                      {{/if}}
+                      {{if itemAry[2].medicationCompliance == 3 }}
+                      <span style="font-size:9pt">不服药</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[3].medicationCompliance == 1 }}
+                      <span style="font-size:9pt">规律</span>
+                      {{/if}}
+                      {{if itemAry[3].medicationCompliance == 2 }}
+                      <span style="font-size:9pt">间断</span>
+                      {{/if}}
+                      {{if itemAry[3].medicationCompliance == 3 }}
+                      <span style="font-size:9pt">不服药</span>
+                      {{/if}}
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:10.5pt">药物名称1</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].drugs[0].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].drugs[0].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].drugs[0].name }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].drugs[0].name }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+              <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:10.5pt">用法1</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.28%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[0].drugs[0].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.02%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[0].drugs[0].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.34%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[1].drugs[0].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.22%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[1].drugs[0].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.12%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[2].drugs[0].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.3%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[2].drugs[0].amount}}mg</span>
+                </p>
+              </td>
+              <td colspan="2" class="cell-border td-cell-middle">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[3].drugs[0].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:10.96%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[3].drugs[0].amount}}mg</span>
+                </p>
+              </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:10.5pt">药物名称2</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].drugs[1].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].drugs[1].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].drugs[1].name }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].drugs[1].name }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+              <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:10.5pt">用法2</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.28%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[0].drugs[1].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.02%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[0].drugs[1].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.34%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[1].drugs[1].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.22%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[1].drugs[1].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.12%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[2].drugs[1].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.3%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[2].drugs[1].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.04%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[3].drugs[1].frequency}}次</span>
+                </p>
+              </td>
+              <td colspan="2" class="cell-border td-cell-middle">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[3].drugs[1].amount}}mg</span>
+                </p>
+              </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:10.5pt">药物名称3</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].drugs[2].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].drugs[2].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].drugs[2].name }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].drugs[2].name }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+              <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:10.5pt">用法3</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.28%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[0].drugs[2].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.02%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[0].drugs[2].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.34%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[1].drugs[2].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.22%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[1].drugs[2].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.12%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[2].drugs[2].frequency}}次</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.3%">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[2].drugs[2].amount}}mg</span>
+                </p>
+              </td>
+              <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.04%">
+                <p style="line-height:9pt; text-align:center; ">
+                  <span style="font-size:9pt">每日{{itemAry[3].drugs[2].frequency}}次</span>
+                </p>
+              </td>
+              <td colspan="2" class="cell-border td-cell-middle">
+                <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                  <span style="font-size:9pt">每次{{itemAry[3].drugs[2].amount}}mg</span>
+                </p>
+              </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:10.5pt">其它药物</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].drugs[3].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].drugs[3].name }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].drugs[3].name }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:top">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].drugs[3].name }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:10.5pt">用法4</span>
+                    </p>
+                </td>
+                <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.28%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">每日{{ itemAry[0].drugs[3].frequency }}次</span>
+                    </p>
+                </td>
+                <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.02%">
+                    <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                        <span style="font-size:9pt">每次{{ itemAry[0].drugs[3].amount }}mg</span>
+                    </p>
+                </td>
+                <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.34%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">每日{{ itemAry[1].drugs[3].frequency }}次</span>
+                    </p>
+                </td>
+                <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.22%">
+                    <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                        <span style="font-size:9pt">每次{{ itemAry[1].drugs[3].amount }}mg</span>
+                    </p>
+                </td>
+                <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.12%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">每日{{ itemAry[2].drugs[3].frequency }}次</span>
+                    </p>
+                </td>
+                <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:11.3%">
+                    <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                        <span style="font-size:9pt">每次{{ itemAry[2].drugs[3].amount }}mg</span>
+                    </p>
+                </td>
+                <td class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:9.04%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">每日{{ itemAry[3].drugs[3].frequency }}次</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; margin:0pt 0pt 0pt 0.6pt; text-align:center; ">
+                        <span style="font-size:9pt">每次{{ itemAry[3].drugs[3].amount }}mg</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">药物副作用</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">1无 2有</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">1无 2有</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">1无 2有</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">1无 2有</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17.4pt">
+                <td rowspan="2" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">转</span>
+                    </p>
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">诊</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">科 别</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].transferInstitution }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].transferInstitution }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].transferInstitution }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].transferInstitution }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:17.4pt">
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt; vertical-align:middle; width:14.36%">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">原 因</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].transferReason }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].transferReason }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].transferReason }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border" style="padding:0.48pt 2.48pt;">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].transferReason }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:19.85pt">
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">此次随访分类</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[0].followupClassify == 1 }}
+                      <span style="font-size:9pt;">控制满意</span>
+                      {{/if}}
+                      {{if itemAry[0].followupClassify == 2 }}
+                      <span style="font-size:9pt;">控制不满意</span>
+                      {{/if}}
+                      {{if itemAry[0].followupClassify == 3 }}
+                      <span style="font-size:9pt;">不良反应</span>
+                      {{/if}}
+                      {{if itemAry[0].followupClassify == 4 }}
+                      <span style="font-size:9pt;">并发症</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[1].followupClassify == 1 }}
+                      <span style="font-size:9pt;">控制满意</span>
+                      {{/if}}
+                      {{if itemAry[1].followupClassify == 2 }}
+                      <span style="font-size:9pt;">控制不满意</span>
+                      {{/if}}
+                      {{if itemAry[1].followupClassify == 3 }}
+                      <span style="font-size:9pt;">不良反应</span>
+                      {{/if}}
+                      {{if itemAry[1].followupClassify == 4 }}
+                      <span style="font-size:9pt;">并发症</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[2].followupClassify == 1 }}
+                      <span style="font-size:9pt;">控制满意</span>
+                      {{/if}}
+                      {{if itemAry[2].followupClassify == 2 }}
+                      <span style="font-size:9pt;">控制不满意</span>
+                      {{/if}}
+                      {{if itemAry[2].followupClassify == 3 }}
+                      <span style="font-size:9pt;">不良反应</span>
+                      {{/if}}
+                      {{if itemAry[2].followupClassify == 4 }}
+                      <span style="font-size:9pt;">并发症</span>
+                      {{/if}}
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                      {{if itemAry[3].followupClassify == 1 }}
+                      <span style="font-size:9pt;">控制满意</span>
+                      {{/if}}
+                      {{if itemAry[3].followupClassify == 2 }}
+                      <span style="font-size:9pt;">控制不满意</span>
+                      {{/if}}
+                      {{if itemAry[3].followupClassify == 3 }}
+                      <span style="font-size:9pt;">不良反应</span>
+                      {{/if}}
+                      {{if itemAry[3].followupClassify == 4 }}
+                      <span style="font-size:9pt;">并发症</span>
+                      {{/if}}
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:19.85pt">
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">下次随访时间</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].nextFollowupTime.substring(0,10) }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].nextFollowupTime.substring(0,10) }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].nextFollowupTime.substring(0,10) }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].doctorSign.substring(0,10) }}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:19.85pt">
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p class="label-center-p">
+                        <span style="font-size:10.5pt">随访医生签名</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[0].doctorSign }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[1].doctorSign }}</span>
+                    </p>
+                </td>
+                <td colspan="2" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[2].doctorSign }}</span>
+                    </p>
+                </td>
+                <td colspan="3" class="cell-border td-cell-middle">
+                    <p style="line-height:9pt; text-align:center; ">
+                        <span style="font-size:9pt">{{ itemAry[3].doctorSign }}</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

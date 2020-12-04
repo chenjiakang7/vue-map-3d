@@ -1,0 +1,137 @@
+.portlet-body-containter {
+    min-height: 450px;
+    width: 100%;
+}
+
+.report-container ul {
+    float: left;
+    padding: 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.report-container li {
+    list-style: none;
+    font-size: 12px;
+    min-height: 21px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.report-container li .form-control {
+    height: 30px;
+    width: 164px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.report-container li .small {
+    width: 40px;
+    height: 30px;
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.report-container .odd {
+    background: #f6f9fa;
+}
+
+.report-container li.none-style {
+    border-top: none;
+    border-right: none;
+}
+
+.report-container li.none-style label {
+    margin: 0;
+}
+
+.none-style span {
+    display: inline-block;
+    text-align: left;
+    width: 84px;
+}
+
+.report-container li .form-control.pressure {
+    width: 50px;
+}
+
+.big-class {
+    width: 75px;
+}
+
+.term-class {
+    width: 145px;
+}
+
+.big-class li {
+    border-left: 1px solid #ddd;
+}
+
+.report-theader {
+    background-color: #e4eafa;
+    color: #666;
+}
+
+.symptom {
+    min-height: 221px;
+}
+
+.special {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    font-size: 12px;
+}
+
+.special.first {
+    border-left: none;
+}
+
+.sign-body {
+    height: 109px;
+}
+
+.life-style {
+    height: 131px;
+}
+
+.classification {
+    height: 40px;
+}
+
+.medication {
+    height: 175px;
+}
+
+.referral {
+    height: 43px;
+}
+
+.descison-container {
+    overflow-x: auto;
+    position: relative;
+}
+
+.pressure-tab {
+    display: inline-block;
+    height: 20px;
+}
+
+.pressure-tab.one {
+    border-right: 1px solid #ddd;
+}
+
+.ellipsis {
+    word-break: keep-all;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: inherit;
+}
+
+label {
+    font-size: 12px;
+}
