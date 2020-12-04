@@ -1,6 +1,6 @@
 {
   "name": "vue-map-3d",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于three.js和vue的3d地图组件",
   "author": "jkchen2",
   "private": false,
