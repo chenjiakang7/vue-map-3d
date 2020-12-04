@@ -1,5 +1,5 @@
 
-# 基于three.js和vue的3d地图组件
+# 基于three.js和vue的3d地图组件(注：以下内容均为npm包使用说明)
 
 ## 当前版本：v1.0.3
 ```bash
