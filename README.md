@@ -1,7 +1,7 @@
 
 # 基于three.js和vue的3d地图组件
 
-## 当前版本：v1.0.2
+## 当前版本：v1.0.3
 ```bash
   基于three.js和vue的3d地图组件，开箱即用，灵活配置。
 ```
@@ -20,7 +20,7 @@ npm install vue-map-3d -S
     <VueMap3d
        :width="800"
        :height="900"
-       :options="{map:{...},mapOutline:{...}}"></VueMap3d>
+       :options="{ baseConfig: { map: {...}, mapOutline:{...} } }"></VueMap3d>
        
 注：map和mapOutline为地图数据，数据较大，图示省略没写，请传入真实标准地图数据（参数详情见下）。
     
@@ -30,7 +30,7 @@ npm install vue-map-3d -S
     <VueMap3d
        :width="800"
        :height="900"
-       :options="{map:{...},mapOutline:{...}}"></VueMap3d>
+       :options="{ baseConfig: { map: {...}, mapOutline:{...} } }"></VueMap3d>
        
 注：map和mapOutline为地图数据，数据较大，图示省略没写，请传入真实标准地图数据（参数详情见下）。
 ```
@@ -60,7 +60,7 @@ npm install vue-map-3d -S
             scale: 1,//地图部分缩放参数
             thickness: 35,//地图厚度
             rotateAnimation: {//地图旋转动画参数
-              on: true,//开启地图自转功能（旋转开启后，请控制区域itemStyle透明度opacity为1，否则会出现标识黑底情况，three.js贴图使用透明材质，下面又叠加透明材质的bug，three.js框架bug，暂无法解决）
+              on: false,//开启地图自转功能（旋转开启后，请控制区域itemStyle透明度opacity为1，否则会出现标识黑底情况，three.js贴图使用透明材质，下面又叠加透明材质的bug，three.js框架bug，暂无法解决）
               speed: 1//自转速度
             },
             labelAnimation: true,//地图标识图标闪烁动画控制

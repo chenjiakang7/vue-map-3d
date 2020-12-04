@@ -76,7 +76,7 @@ export default {
 
       const itemData = {};
       let lineData = [];
-      this.options.series.map((s) => {
+      if (this.options.series) this.options.series.map((s) => {
 
         if (s.type === 'item-data') {
 
@@ -178,7 +178,7 @@ export default {
           scale: 1,//地图部分缩放参数
           thickness: 35,//地图厚度
           rotateAnimation: {//地图旋转动画参数
-            on: true,//开启地图自转功能
+            on: false,//开启地图自转功能
             speed: 1//自转速度
           },
           labelAnimation: true,//地图标识图标闪烁动画控制
