@@ -118,7 +118,7 @@ npm install vue-map-3d -S
           labelStyle: {//地图区域标识样式
             color: '#ffffff',
             fontSize: 14,
-            icon: require('./imgs/label-icon.png'),//标识文本下方图标
+            icon: '',//使用base64编码图标
             iconWidth: 14,//图标尺寸宽
             iconHeight: 14//图标尺寸高
           },
